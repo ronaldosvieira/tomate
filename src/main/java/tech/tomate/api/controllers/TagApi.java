@@ -7,7 +7,6 @@ import tech.tomate.api.resources.Tag;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
 public interface TagApi {
 
     @GetMapping("/tags")
