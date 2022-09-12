@@ -13,13 +13,13 @@ public interface TagApi {
     List<Tag> retrieveTags();
 
     @PostMapping("/tags")
-    Tag createTag();
+    Tag createTag(@RequestBody Tag tag);
 
     @GetMapping("/tags/{hash}")
     Tag retrieveTag(@PathVariable UUID hash);
 
     @PatchMapping("/tags/{hash}")
-    Tag modifyTag(@PathVariable UUID hash);
+    Tag modifyTag(@PathVariable UUID hash, @RequestBody Tag tag);
 
     @DeleteMapping("/tags/{hash}")
     Tag removeTag(@PathVariable UUID hash);
