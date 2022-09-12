@@ -1,5 +1,6 @@
 package tech.tomate.api.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import tech.tomate.api.resources.Tag;
 
@@ -22,5 +23,6 @@ public interface TagApi {
     Tag modifyTag(@PathVariable UUID hash, @RequestBody Tag tag);
 
     @DeleteMapping("/tags/{hash}")
-    Tag removeTag(@PathVariable UUID hash);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void removeTag(@PathVariable UUID hash);
 }
